@@ -22,7 +22,7 @@ interface ICartContext {
 }
 
 export const cartContext = createContext<ICartContext>({
-  products: [],
+  products:[],
   cartTotalPrice: 0,
   cartBasePrice: 0,
   cartTotalDiscount: 0,
@@ -36,9 +36,7 @@ export const cartContext = createContext<ICartContext>({
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [products, setProducts] = useState<CartProduct[]>(
-    JSON.parse(localStorage.getItem("@annavoeg-store/cart-products") || "[]")
-  );
+  const [products, setProducts] = useState<CartProduct[]>([])
 
   useEffect(() => {
     localStorage.setItem(
@@ -59,7 +57,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
     }, 0);
   }, [products]);
 
-  const totalDiscount = total - subTotal;
+  const totalDiscount = subTotal - total;
 
   const addProductToCart = (product: CartProduct) => {
     const productIsAlreadyOnCart = products.some(
