@@ -1,4 +1,4 @@
-import { CartProduct, cartContext } from "@/providers/cart";
+import { CartProduct, CartContext } from "@/providers/cart";
 import Image from "next/image";
 import { Button } from "./button";
 import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from "lucide-react";
@@ -10,7 +10,7 @@ interface CartItemProps {
 
 const CartItem = ({ product }: CartItemProps) => {
 
-    const {decreaseProductQuantity, increaseProductQuantity, removeProductFromCart} = useContext(cartContext)
+    const {decreaseProductQuantity, increaseProductQuantity, removeProductFromCart} = useContext(CartContext)
 
     const handleDecreaseProductQuantityClick =()=>{
         decreaseProductQuantity(product.id)

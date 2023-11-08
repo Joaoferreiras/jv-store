@@ -1,7 +1,7 @@
 import { ShoppingCartIcon } from "lucide-react";
 import { Badge } from "./badge";
 import { useContext } from "react";
-import { cartContext } from "@/providers/cart";
+import { CartContext } from "@/providers/cart";
 import CartItem from "./cartItems";
 import { computeProductTotalPrice } from "@/helpers/product";
 import { Separator } from "@radix-ui/react-separator";
@@ -11,7 +11,7 @@ import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = () => {
-  const { products, subTotal, total, totalDiscount } = useContext(cartContext);
+  const { products, subtotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
     const checkout = await createCheckout(products);
@@ -56,7 +56,7 @@ const Cart = () => {
 
           <div className="flex items-center justify-between text-xs">
             <p>Subtotal</p>
-            <p>R$ {subTotal.toFixed(2)}</p>
+            <p>R$ {subtotal.toFixed(2)}</p>
           </div>
 
           <Separator />

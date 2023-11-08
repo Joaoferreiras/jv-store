@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discountBadge";
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { cartContext } from "@/providers/cart";
+import { CartContext } from "@/providers/cart";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -20,7 +20,7 @@ const ProductInfo = ({
 }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
 
-  const {addProductToCart} = useContext(cartContext)
+  const {addProductToCart} = useContext(CartContext)
 
   const handleIncreaseQuantityClick = () => {
     setQuantity((prev) => prev + 1);
