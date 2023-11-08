@@ -9,7 +9,7 @@ import {
   LogOutIcon,
 } from "lucide-react";
 import { Button } from "./button";
-import { Card, CardContent } from "./card";
+import { Card } from "./card";
 import {
   Sheet,
   SheetClose,
