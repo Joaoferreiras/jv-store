@@ -67,8 +67,8 @@ const Header = () => {
             </div>
           )}
 
-          <div className="mt-4 flex-col gap-2 ">
-            {status === "unauthenticated" && (
+          <div className="mt-4 flex flex-col gap-2 ">
+           {status === "unauthenticated" && (
               <Button
                 onClick={handleLoginClick}
                 variant="outline"
@@ -89,29 +89,29 @@ const Header = () => {
                 Fazer logOut
               </Button>
             )}
-            <SheetClose asChild>
+            
+                <SheetClose asChild>
               <Link href="/">
                 <Button
                   variant="outline"
-                  className="w-full justify-start gap-2"
-                >
+                  className="w-full justify-start gap-2">
                   <HomeIcon size={16} />
                   Inicio
                 </Button>
               </Link>
             </SheetClose>
+              
 
             <SheetClose asChild>
               <Link href="/deals">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <PercentIcon size={16} />
-                  Ofertas
-                </Button>
+              <Button variant="outline" className="w-full justify-start gap-2">
+              <PercentIcon size={16} />
+              Ofertas
+            </Button>                
               </Link>
             </SheetClose>
+            
+            
 
             <SheetClose asChild>
               <Link href="/catalog">
@@ -124,6 +124,7 @@ const Header = () => {
                 </Button>
               </Link>
             </SheetClose>
+            
           </div>
         </SheetContent>
       </Sheet>
